@@ -1,0 +1,13 @@
+<div class="brique">
+	<fieldset>
+		<legend>Types</legend>
+		<div>
+			{% for type in form.types %}
+				{{ form_widget(type) }}
+				{% if loop.index is divisibleby(1) %}
+			        <br class="clean" />
+			    {% endif %}
+			{% endfor %}
+		</div>
+	</fieldset>
+</div>

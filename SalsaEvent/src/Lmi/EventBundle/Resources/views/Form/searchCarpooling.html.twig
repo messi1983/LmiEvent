@@ -1,0 +1,54 @@
+<div class="formulaire">
+	<h3>Formulaire de recherche de covoitrage</h3>
+	<div class="well">
+		<form action="{{ path('lmievent_lister_covoiturages') }}" method="post" {{ form_enctype(form) }}>
+			<div class="error">
+				{{ form_errors(form) }}
+			</div>
+			
+			<div class="brique">
+				Evènement :{{ form_widget(form.eventId) }}
+			</div>
+			
+			<div class="clean"/>
+			
+			{% include "LmiEventBundle:Form:Briques/userInfos.html.twig" %}
+			{% include "LmiEventBundle:Form:Briques/periode.html.twig" %}
+			
+			<div class="trajet1" style="float:left">
+				<fieldset style="border: 1px solid blue;margin: 0;padding: 0;">
+					<legend style="font-weight: bold;margin: 0;padding-left: 5px;margin-left:10px;margin-right: 0px;font-size:90%;width: 60px;border:0">Trajet</legend>
+					<table style="margin-left: 10px">
+						<tr>
+							<td style="font-style: italic;">
+								Depart
+							</td>
+							<td style="font-style: italic;">
+								Arrivée
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{{ form_errors(form.trajet.villeDepart) }}
+								{{ form_widget(form.trajet.villeDepart) }}
+							</td>
+							<td>
+								{{ form_errors(form.trajet.villeArrivee) }}
+								{{ form_widget(form.trajet.villeArrivee) }}
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+			
+			{% include "LmiEventBundle:Form:Briques/places.html.twig" %}
+			
+			<div class="clean"/>
+			
+			{{ form_rest(form) }}
+			
+			<input type="submit" />
+			<input type="button" value="Fermer" />
+		</form>
+	</div>
+</div>

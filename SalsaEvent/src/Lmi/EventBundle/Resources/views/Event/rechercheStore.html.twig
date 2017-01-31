@@ -1,0 +1,30 @@
+{% extends "::layout.html.twig" %}
+
+{% set listeElements = listeElements|default(null) %}
+
+{% block title %}
+	{{ parent() }} : {{ title }}
+{% endblock %}
+
+{% block body %}
+	<p class="indent">
+		<span class="important">{{ listeElements|length }}</span> écoles au total trouvées
+	</p>
+
+	{% if listeElements %}
+		{% for element in listeElements %}
+			{% include rowView with {'element': element} %}
+			<div class="clean"></div>
+		{% endfor %}
+	{% endif %}
+	
+	<div class="pagination">
+		<ul>
+			{% for p in range(1, nombrePage) %}
+				<li{% if p == page %} class="active"{% endif %}>
+					<a href="{{ path('lmievent_rechercher_ecoles', {'page': p}) }}">{{ p }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

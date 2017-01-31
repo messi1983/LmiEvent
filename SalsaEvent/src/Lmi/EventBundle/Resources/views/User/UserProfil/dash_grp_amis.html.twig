@@ -1,0 +1,59 @@
+<!-- --------------------------------------------------------------------- -->
+<!--  -------------------------- Groupes de contacts ----------------------------->
+<!-- --------------------------------------------------------------------- -->
+<div class="received break-after" style="padding: 5px">
+
+	<div class="barrette">
+		<div class="texte">Groupes de contacts (6)</div>
+		<div class="liste_contacts detail plus"></div>
+	</div>
+
+	<form action="" style="margin-bottom: 0px; display: none" class="detail_box" id="contacts_detail_panel">
+		<table class="tableau zebre avectri tablesorter">
+		   <thead> 
+		   	  <tr>
+		        <th style="width:55%">Groupe</th>
+		        <th style="width:35%">Date creation</th>
+		        <th style="width:10%; padding:5px">
+		        	<input type="checkbox" class="all"> 
+		        </th>
+		      </tr>
+		   </thead>
+		   <tbody>
+		   	  <tr>
+		        <td>
+		        	<div style="font-size: 95%">
+						<div style="float: left; height: 100%; font-weight: bold">Kizomba (2 pers.)</div>
+						<div class="liste_grp detail plus" style="float: right; height: 100%; padding: 0px"></div>
+						<ul id="grp" class="clean" style="display:none">
+							<li>Louis MESSI</li>
+							<li>Louis MESSI</li>
+							<li>Louis MESSI</li>
+						</ul>
+					</div>
+		        </td>
+		        <td>02/08/2016</td>
+		        <td style="padding:5px">
+		        	<input type="checkbox"  value="deuxieme_checkbox"> 
+		        </td>
+		      </tr>
+		      <tr>
+		        <td>Michelle</td>
+		        <td>02/08/2016</td>
+		        <td style="padding:5px">
+		        	<input type="checkbox"  value="deuxieme_checkbox"> 
+		        </td>
+		      </tr>
+		   </tbody>
+		</table>
+		
+		<p style="margin-top: 10px; font-size: 90%">
+			<a href="{{ path('lmievent_user_grp_new') }}" class="btn btn-default new" data-bpopup='<img src="" />'>
+				<i class="icon-edit"></i> Créer
+			</a>
+			<a href="#" class="btn btn-default suppress">
+				<i class="icon-remove"></i> Supprimer
+			</a>
+		</p>
+	</form>
+</div>

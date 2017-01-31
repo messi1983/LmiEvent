@@ -1,0 +1,35 @@
+{% set listing = listing|default(false) %}
+{% set detail = detail|default(false) %}
+{% set ecole = bean|default(null) %}
+{% set locale = bean|default('fr') %}
+
+{% if ecole %}
+	{% if listing %}
+		{% include "LmiEventBundle:Event:listing_row_logo.html.twig" with {'logo': ecole.logo, 'default': 'bundles/sdzblog/images/logo_ecole.jpg', 'alt' : 'ecole.jpg'} %}
+		{% include "LmiEventBundle:Event:listing_row_texte.html.twig" with {'detailUrl': 'lmievent_voir_ecole', 'entityId': ecole.id, 'title' : ecole.nom, 'texte' : ecole.descriptionTexte} %}
+	{% elseif detail %}
+		<h2 class="header">{{ ecole.nom }}</h2><br />
+		<div class="indent">
+			<p class="notice">{{ 'ecole.description.label'|trans }}</p>
+			<p class="well">
+				{{ ecole.descriptionTexte }}
+			</p>
+			{% if ecole.adresse is not null %}
+				<p><span class="notice">{{ 'ecole.address.label'|trans }}:</span> {{ ecole.adresse.inStringFormat }}</p>
+			{% endif %}
+			
+			{% if ecole.link %}<p class="notice">{{ 'ecole.link.label'|trans }} <a class="value" href="{{ ecole.link }}">{{ 'link.wiki' | trans }}</a></p>{% endif %}
+			{% if ecole.tel %}<p class="notice">{{ 'ecole.phone.label'|trans }} <span class="value">{{ ecole.tel }}</span></p>{% endif %}
+			{% if ecole.logo %}
+				<p class="notice">{{ 'ecole.logo.label'|trans }}
+					<img src="{{ asset(ecole.logo.webPath | imagine_filter('thumb_100x100')) }}" alt="{{ ecole.logo.alt }}" />
+				</p>
+			{% endif %}
+		</div>
+	{% else %}
+		<a href="{{ path('lmievent_voir_ecole', {'id': ecole.id}) }}">{{ ecole.nom }}</a>
+		{% if ecole.adresse is not null %}
+			<span class="important">- {{ ecole.adresse.ville }} {{ ecole.adresse.codePostal }}</span>
+		{% endif %}
+	{% endif %}
+{% endif %}

@@ -1,0 +1,5 @@
+parameters:
+#    sdz_event.example.class: Lmi\EventBundle\Example
+
+services:
+

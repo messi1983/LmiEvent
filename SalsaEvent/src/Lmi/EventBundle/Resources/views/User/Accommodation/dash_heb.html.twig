@@ -1,0 +1,65 @@
+<!-- --------------------------------------------------------------------- -->
+<!--  --------------------------- Hebergements ------------------------------>
+<!-- --------------------------------------------------------------------- -->
+<div id="userAccomodation" style="width: 100%; border: 1px solid green; padding: 5px; display: none; background-image: url({{ asset('bundles/lmievent/images/paysage.jpg') }})">
+	
+	<h3 style="color: white"><u>Vos Hébergements</u></h3>
+	
+	<div class="dash_bloc">
+		<div class="contenu">
+			<!-- ------------------------- -->
+			<!-- --- Hebergements reçus -- -->
+			<!-- ------------------------- -->
+			<div class="received break-after">
+			
+				<div class="barrette">
+					<div class="texte">0 Réçus</div>
+					<div class="liste_heb detail plus"></div>
+				</div>
+				
+				<div id="heb_detail_panel" class="detail_box" style="display: none">
+					<table class="tableau zebre avectri tablesorter">
+					   <thead> 
+						   <tr>
+						       <th style="width:35%">Image</th>
+						       <th style="width:20%">Periode</th>
+						       <th style="width:10%">Prix</th>
+						       <th>Hebergeur</th>
+						   </tr>
+					   </thead>
+					   <tbody>
+						   <tr>
+						       <td>
+						       	<img src="{{ asset('bundles/lmievent/images/logo_ecole.jpg' | imagine_filter('thumb_100x100')) }}" alt="messi" />
+						       </td>
+						       <td>J-1 / 18h30</td>
+						       <td>14 &#8364</td>
+						       <td>Julien G.</td>
+						   </tr>
+						   <tr>
+						       <td>Michelle</td>
+						       <td>26 ans</td>
+						       <td>14 &#8364</td>
+						       <td>États-Unis</td>
+						   </tr>
+					   </tbody>
+					</table>
+					
+					<p style="margin-top: 10px; font-size: 90%"><a href="#" class="btn btn-default">Définir un nouveau groupe</a></p>
+				</div>
+				<div class="clean"></div>
+			</div>
+			
+			<!-- ------------------------- -->
+			<!-- --- Hebergements emis -- --->
+			<!-- ------------------------- -->
+			<div>
+				<div class="barrette">
+					<div class="texte">0 Emis</div>
+					<div class="detail plus"></div>
+				</div>
+				<div class="clean"></div>
+			</div>
+		</div>
+	</div>
+</div>

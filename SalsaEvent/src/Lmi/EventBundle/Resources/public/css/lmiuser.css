@@ -1,0 +1,188 @@
+.dashboard .dash_bloc {
+   border:1px solid red; 
+   width:100%; 
+   margin-bottom: 15px;
+}
+
+/************************** CAR POOLING ************************/
+
+.cp-edit-form .aller-retour {
+	margin-bottom: 3px;
+}
+
+.cp-edit-form .bloc-avec-titre .titre {
+	font-style: italic; 
+	background-color: orange; 
+}
+
+.cp-edit-form .bloc-avec-titre .contenu {
+	padding: 4px 15px 4px 15px;
+}
+
+.cov .price {
+  width: 50px;
+  font-size: 1.2em;
+  color:green;
+  padding: 0px 5px 0px 5px
+}
+
+.cov .time {
+  background-color: orange; 
+  padding: 1px 6px 1px 6px;
+  widht: 50px;
+}
+
+.cov .trajet {
+  font-size: 1.3em;
+  margin-left: 45px; 
+}
+
+.cov .driver-infos span {
+	padding-left: 5px;
+}
+
+.cov .more-infos {
+	margin-top: 15px; 
+	margin-bottom: 10px;
+}
+
+.cov .car-infos {
+	margin-left: 40px;
+}
+
+.cov .resume {
+	width: 620px;
+}
+
+.cov .driver-infos { 
+	width: 185px;
+}
+
+.cov .depart { 
+	color:green; 
+	font-weight: bold; }
+	
+.cov .arrivee { 
+	color:orange; 
+	font-weight: bold; 
+}
+
+.cov .vehicule {
+  color:green;
+  font-weight: bold
+}
+
+.cov .places {
+  color:orange;
+  font-weight: bold
+}
+
+/********************************************************************/
+
+/************************GENERAL*************************************/
+
+.bloc-gauche {
+	float: left;
+}
+
+.bloc-droit {
+	float: right;
+}
+
+.bloc-avec-titre {
+	padding: 0px;
+}
+
+.bloc-avec-titre > .titre {
+	padding: 0px; 
+	margin: 0px;
+	text-align: center;
+}
+
+.bords-arrondies {
+	-moz-border-radius: 5px; border-radius: 5px;
+}
+
+.fond-orange {
+	background-color: orange; 
+}
+
+.bordure-orange {
+	border: 1px solid orange; 
+}
+
+.bordure-verte {
+	border: 1px solid green; 
+}
+
+.boutons-gestion {
+	margin-top: 20px;
+}
+
+.bandeau-evenement {
+	text-align:center;
+	font-size: 80%;
+	background-color: yellow
+}
+
+.smallFont {
+  font-size: 80%;
+}
+
+.view > .title {
+	text-align:center; 
+	border-bottom: 1px solid black; 
+	font-style: italic;
+}
+
+.dashboard .title { background: orange; padding-left:5px; }
+.dashboard .contenu { padding:5px; font-size: 95% }
+.dashboard table th, .dashboard table td { border: 1px solid black; }
+
+.barrette {
+   padding: 0;
+   list-style: none;
+   background: #7FFFD4;
+   background: -moz-linear-gradient(#7FFFD4, #F0F8FF);
+   background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #7FFFD4),color-stop(1, #F0F8FF));
+   background: -webkit-linear-gradient(#7FFFD4, #F0F8FF);
+   background: -o-linear-gradient(#7FFFD4, #F0F8FF);
+   background: -ms-linear-gradient(#7FFFD4, #F0F8FF);
+   background: linear-gradient(#7FFFD4, #F0F8FF);
+  /*  -moz-border-radius: 50px;
+   border-radius: 50px; */
+   -moz-box-shadow: 0 2px 1px #9c9c9c;
+   -webkit-box-shadow: 0 2px 1px #9c9c9c;
+   box-shadow: 0 2px 1px #9c9c9c;
+   height: 25px; 
+   font-size: 95%;
+}
+
+.barrette .texte { 
+   float: left; 
+   width: 70%; 
+   height: 100%; 
+   padding: 0px 0px 0px 5px;
+}
+
+.barrette .detail {
+   float: right;
+   width: 30px;
+   height: 100%;
+   padding: 0px;
+}
+
+.dash_bloc .contenu { padding:5px; }
+
+.dash_bloc .detail_box {
+   margin-top: 5px;
+   font-size: 90%;
+   display: none;
+}
+
+.detail_box {
+   margin-top: 5px;
+   font-size: 90%;
+}
+
+.break-after { margin-bottom: 10px }

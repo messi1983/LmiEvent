@@ -1,0 +1,8 @@
+<div class="well">
+	<form method="post" {{ form_enctype(form) }}>
+		{{ form_widget(form) }} 
+		<br /> <br /> 
+		<input type="submit" id="btn-submit" class="btn btn-primary" /> 
+		<input type="reset" value="{{ 'button.cancel'|trans }}" id="btn-reset" class="btn btn-default" />
+	</form>
+</div>

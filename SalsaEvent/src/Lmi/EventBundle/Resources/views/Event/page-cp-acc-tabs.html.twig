@@ -1,0 +1,43 @@
+{% set tabDates = tabDates|default(null) %}
+{% set event = event|default(null) %}
+{% set listeElements = listeElements|default(null) %}
+{% set routeSearch = routeSearch|default(null) %}
+
+{% if event is not null %}
+	{% if type == 'carpooling' %}
+		<p style="margin-bottom: 20px; text-align:center; font-size: 1.2em"><b>Coivoiturages pour </b><span class="important">{{ event.identification }}</span></p>
+	{% else %}
+		<p style="margin-bottom: 20px; text-align:center; font-size: 1.2em"><b>Hébergements/Locations/Colocations pour </b><span class="important">{{ event.identification }}</span></p>
+	{% endif %}
+{% endif %}
+
+{% if tabDates is not null %}
+	<ul class="rest nav nav-tabs nav-justified">
+		{% for date in tabDates %}
+			<li {% if date.date == tabToActive %} class="active" {% endif %}>
+				{% if date.date == today %}
+					{% if event %}
+						<a href="{{ path(routeSearch, {'date': date.date, 'eventId': event.id} ) }}">{{ 'day.today' | trans }}</a>
+					{% else %}
+						<a href="{{ path(routeSearch, {'date': date.date} ) }}">{{ 'day.today' | trans }}</a>
+					{% endif %}
+				{% elseif date.date == tomorrow %}
+					{% if event %}
+						<a href="{{ path(routeSearch, {'date': date.date, 'eventId': event.id} ) }}">{{ 'day.tomorrow' | trans }}</a>
+					{% else %}
+						<a href="{{ path(routeSearch, {'date': date.date} ) }}">{{ 'day.tomorrow' | trans }}</a>
+					{% endif %}
+				{% else %}
+					{% if event %}
+						<a href="{{ path(routeSearch, {'date': date.date, 'eventId': event.id} ) }}">{{ date.date }}</a>
+					{% else %}
+						<a href="{{ path(routeSearch, {'date': date.date} ) }}">{{ date.date }}</a>
+					{% endif %}
+				{% endif %}
+			</li>
+		{% else %}
+			<p>Acun évènement trouvé</p>
+		{% endfor %}
+	</ul>
+{% endif %}
+	

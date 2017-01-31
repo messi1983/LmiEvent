@@ -1,0 +1,34 @@
+<div class="formulaire">
+	<div id="popup">
+		 <span class="button b-close"><span>X</span></span>
+		 <div class="content"></div>
+	</div>
+	
+	<h3>Formulaire de recherche d'hébergements</h3>
+	<div class="well">
+		<form action="{{ path('lmievent_rechercher_hebergements') }}" method="post" {{ form_enctype(form) }}>
+			<div class="error">
+				{{ form_errors(form) }}
+			</div>
+			
+			<div class="brique">
+				Evènement :{{ form_widget(form.eventId) }}
+			</div>
+			
+			<div class="clean"/>
+			
+			{% include "LmiEventBundle:Form:Briques/userInfos.html.twig" with {'infosType': 'landlordInfos'}  %}
+			{% include "LmiEventBundle:Form:Briques/periode.html.twig" %}
+			{% include "LmiEventBundle:Form:Briques/places.html.twig" %}
+			{% include "LmiEventBundle:Form:Briques/types.html.twig" %}
+			{% include "LmiEventBundle:Form:Briques/regions.html.twig" %}
+			
+	 		<div class="clean"/>
+			
+			{{ form_rest(form) }}
+			
+			<input type="submit" />
+			<input type="button" value="Fermer" />
+		</form>
+	</div>
+</div>

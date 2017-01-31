@@ -1,0 +1,55 @@
+{% set type = type|default('recus')%}
+{% set titre = titre|default(null) %}
+
+<!-- ------------------------- -->
+<!-- --- Covoiturages reçus -- -->
+<!-- ------------------------- -->
+<div class="received break-after">
+
+	<div class="barrette">
+		<div class="texte">{{ titre }}</div>
+		<div class="{{ 'liste_cov_' ~ type ~ ' detail plus' }}"></div>
+	</div>
+	
+	<form action="" id="{{ 'cov_detail_panel_' ~ type }}" class="detail_box" style="display: none">
+		<table class="tableau zebre avectri tablesorter">
+		   <thead>
+			<tr>
+			   <th class="trajet" style="">Trajet</th>
+		       <th class="dateheure" style="width: 20%">Date/heure</th>
+		       <th class="prix" style="width: 10%">Prix</th>
+		       <th>Conducteur</th>
+		       <th style="width: 10%">Places dispo</th>
+		       <th style="width:5%; padding:5px"></th>
+			</tr>
+		   </thead>
+		   <tbody>
+		   	   {% for carpooling in user.carpoolings %}
+		   	   		<tr>
+						<td>
+					          <div style="color: green">{{ carpooling.trajet.villeDepart }}</div>
+					       	  <div style="color: red"><i class="icon-arrow-right"></i> {{ carpooling.trajet.villeArrivee }}</div>
+					    </td>
+					    <td>
+					         <span style="color:red">{{ carpooling.dateDepart|date('d-m-Y') }}</span> {{ carpooling.dateDepart|date('H\\hi') }}
+					    </td>
+					    <td style="color:green">14 &#8364</td>
+					    <td>Julien G.</td>
+					    <td>
+					    	<span class="important">3</span> / 4
+					    </td>
+					    <td style="padding:5px; text-align: center">
+					    	<a href="#" class="btn btn-default new" data-bpopup='<img src="" />'>
+								<i class="icon-thumbs-up"></i> Annuler
+							</a>
+							<a href="#" class="btn btn-default suppress">
+								<i class="icon-thumbs-down"></i> Reporter
+							</a>
+						</td>
+					</tr>
+			   {% endfor %}
+		   </tbody>
+		</table>
+	</form>
+	<div class="clean"></div>
+</div>

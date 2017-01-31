@@ -1,0 +1,78 @@
+.zoneResearch img {
+   float: right;
+   border:1px solid black;
+   margin-right:10px;
+}
+
+.zoneResearch div:hover > label {
+   background-color: #fafafa;
+} 
+
+.zoneResearch div:hover > img {
+   background-color: #fafafa;
+   border:1px solid red;
+}
+
+*html .zoneResearch div:hover > label { /* IE6 */
+   background-color: #fafafa;
+} 
+
+*html .zoneResearch div:hover > img { /* IE6 */
+   background-color: #fafafa;
+   border:1px solid red;
+}
+
+/* .zoneResearch div:hover > ul {
+   display: block;
+} */
+
+/* Sous-menu */
+
+.zoneResearch ul {
+   list-style: none;
+   margin: 0;
+   padding: 0 0 0 0;
+   display: none;
+   position: absolute;
+   top: 175px;
+   left: 315px;
+   z-index: 99999;
+  /*  background: #444;
+   background: -moz-linear-gradient(#444, #111);
+   background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #111),color-stop(1, #444));
+   background: -webkit-linear-gradient(#444, #111);
+   background: -o-linear-gradient(#444, #111);
+   background: -ms-linear-gradient(#444, #111);
+   background: linear-gradient(#444, #111); */
+  -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+ 
+/* Rétablissement du flottement */
+.zoneResearch:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+}
+
+* html .zoneResearch             { zoom: 1; } /* IE6 */
+*:first-child+html .zoneResearch { zoom: 1; } /* IE7 */
+
+
+img.ui-datepicker-trigger {
+    position: relative;
+    left: -18px;
+    top: 1px;
+}
+
+.form-text-field-label {
+	margin-top:7px;
+	font-weight: bold;
+	font-size: 90%;
+	float:left;
+}
+
+	

@@ -1,0 +1,21 @@
+{% set school = element|default(null) %}
+
+<div class="danceschool">
+	<!-- Flyer -->
+	<p  class="colSchool0">
+		{{ school.nom }}
+	</p>
+	
+	<div class="colSchool1">
+		{% for danse in school.danses %}
+			<span class="{{ danse }}">{{ danse }}</span>
+		{% endfor %}
+	</div>
+	
+	{% if school.adresse is not null %}
+		<p  class="colSchool2">
+			{{ school.adresse.ville }}
+		</p>
+	{% endif %}
+	<div class="clean"></div>
+</div>

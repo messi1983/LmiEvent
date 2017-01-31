@@ -1,0 +1,15 @@
+{% set detailUrl = detailUrl|default('#') %}
+{% set entityId = entityId|default(null) %}
+{% set title = title|default(null) %}
+{% set texte = texte|default(null) %}
+
+<div {% if is_granted('ROLE_ADMIN') %} class="cell-short-desc" {% else %} class="cell-long-desc" {% endif %}>
+	<p class="sous-titre">
+		<a class="title-link" href="{{ path(detailUrl, {'id': entityId} ) }}">{{ title }}</a>
+	</p>
+	<p class="listing-texte-size">{{ texte |truncate(80) }} </p>
+</div>
+
+{% if is_granted('ROLE_ADMIN') %}
+	<div class="cell-ckbx"><input type="checkbox" name="myIds[]" value="{{ entityId }}"/></div>
+{% endif %}

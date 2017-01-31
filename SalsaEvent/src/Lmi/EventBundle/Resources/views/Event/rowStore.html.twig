@@ -1,0 +1,71 @@
+{% set element = element|default(null) %}
+
+<div class="soiree" style="border:2px solid black;margin-top:10px;padding:10px">
+	<!-- Flyer -->
+	<div class="cell0" style="border:2px solid red;margin-left:0px;padding-left:0px">
+		<p style="border:1px solid red;"><img src="{{ asset('bundles/lmievent/images/logo_ecole.jpg' | imagine_filter('thumb_100x100')) }}" alt="messi" /></p>
+		<p style="text-align: center;">A'latiCa</p>
+	</div>
+	
+	<!-- Resume -->
+	<div class="cell1" style="border:2px solid red">
+		<div class="titre">
+			<p class="identification" style="text-align: center; color: red">{#{ soiree.identification }#}
+				<b>Initiation Salsa Bachata Au Jorkyb'Hall à Bonneville</b>
+			</p>
+{# 			<p style="font-size: 80%;padding-left:50px">Alatica - Pessac - Aquitaine</p>#}
+		</div>
+		<div class="programme" style="font-size: 80%;padding:10px">{#{ soiree.programme }#}
+			<p>
+				Evènement <b>Salsa/Bachata</b> comprenant 1 <b>stage de Salsa</b> de 22h à 23h avec <b>Anne Sphie</b> et <b>Lima</b>, 
+				1 stage de Bachata</b> de 22h à 23h avec <b>Anne Sphie</b> et <b>Lima</b>,
+				<b>1 soirée dansante</b> de 22h à 00h avec <b>Dj XXX</b> aux platines
+				<img style="float: right" src="{{ asset('bundles/lmievent/images/etoile-festival.png' | imagine_filter('thumb_20x20')) }}" alt="messi" />
+				<img style="float: right" src="{{ asset('bundles/lmievent/images/etoile-soiree.png' | imagine_filter('thumb_20x20')) }}" alt="messi" />
+				<img style="float: right" src="{{ asset('bundles/lmievent/images/etoile-soiree.png' | imagine_filter('thumb_20x20')) }}" alt="messi" />
+			</p>
+		</div>
+		<p class="clean"></p>
+		<div classe="service" style="font-size: 80%;border-top:1px solid black;padding-left:10px">
+			<table class="" style="width: 300px;float: left;border-right:1px solid black;">
+				<tr>
+					<td><b>covoiturages:</b></td>
+					<td><b>0</b> proposé</td>
+					<td><a href="#">Proposez</a></td>
+					<td><a href="#">Consultez</a></td>
+				</tr>
+				<tr>
+					<td><b>Hébergements:</b></td>
+					<td><b>0</b> proposé</td>
+					<td><a href="#">Proposez</a></td>
+					<td><a href="#">Consultez</a></td>
+				</tr>
+			</table>
+			<p style="float: left;padding-left:10px"><b>Stages</b> : <a href="">S'inscrire</a></p>
+		</div>
+		<p class="clean"></p>
+	</div>
+	
+{# 	<!-- organisateur -->#}
+{# 	<div class="cell2" style="border:2px solid red">#}
+{# 		<p>#}
+{# 			{% for organisateur in event.organisateurs %}#}
+{# 				{{ organisateur.nom }}#}
+{# 			{% endfor %}#}
+{# 		</p>#}
+{# 	</div>#}
+	
+{# 	<!-- ville -->#}
+{# 	<div class="cell3" style="border:2px solid red">#}
+{# 		{% if event.adresse %}#}
+{# 			<p>{{ event.adresse.ville }}</p>#}
+{# 		{% endif %}#}
+{# 	</div>#}
+	
+{# 	<!-- region -->#}
+{# 	<div class="cell4" style="border:2px solid red">#}
+{# 		<p>Région</p>#}
+{# 	</div>#}
+	
+	<div class="clean"></div>
+</div>

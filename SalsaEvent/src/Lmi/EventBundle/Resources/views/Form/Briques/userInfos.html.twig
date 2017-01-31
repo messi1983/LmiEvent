@@ -1,0 +1,30 @@
+{% set infosType = infosType|default('driverInfos') %}
+
+<div class="brique">
+	<fieldset>
+		<legend>
+			{% if infosType == 'driverInfos' %}
+				Conducteur
+			{% else %}
+				Logeur
+			{% endif %}
+		</legend>
+		<div>
+			{% if infosType == 'driverInfos' %}
+				Nom :{{ form_widget(form.driverInfos.username) }}
+			{% else %}
+				Nom :{{ form_widget(form.landlordInfos.username) }}
+			{% endif %}
+		</div>
+		<div>
+			<label style="float:left">Sexe :</label> 
+			<div style="float:left">
+				{% if infosType == 'driverInfos' %}
+					{{ form_widget(form.driverInfos.sexe) }}
+				{% else %}
+					{{ form_widget(form.landlordInfos.sexe) }}
+				{% endif %}
+			</div>
+		</div>
+	</fieldset>
+</div>

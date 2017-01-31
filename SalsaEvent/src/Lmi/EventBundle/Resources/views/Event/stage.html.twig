@@ -1,0 +1,26 @@
+{% set soiree = soiree|default(null) %}
+
+<div class="soiree" style="border:2px solid black;margin-top:10px; padding-left:30px">
+	<p>{#{ soiree.identification }#}
+		<b>Initiation Salsa Bachata Au Jorkyb'Hall à Bonneville</b>
+	</p>
+	
+	<br />
+	
+	<p>{#{ soiree.programme }#}
+			Soirée Salsa Bachata avec 1 h d'initiation de 21h à 22h<br />
+	 		Suivi d'une soirée dansante de 22h à 00h
+	</p>
+	
+	<p>{#{ soiree.entree }#}
+		Entrée libre
+	</p>
+	
+	<p>{#{ soiree.organisateurs }#}
+		Auteur : Le Club House Bonneville
+	</p>
+	
+	<p>{#{ soiree.adresse }#}
+		Lieu : Au Jorkyb'Hall 233 rue Pertuiset 74130 Bonneville
+	</p>
+</div>

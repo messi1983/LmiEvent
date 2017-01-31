@@ -1,0 +1,26 @@
+<div class="formulaire">
+	<h3>Formulaire de recherche d'évènements</h3>
+	<div class="well">
+		<form action="{{ path('lmievent_rechercher_evenements') }}" method="post" {{ form_enctype(form) }}>
+			<div class="error">
+				{{ form_errors(form) }}
+			</div>
+			
+			<div class="identification1" style="margin-bottom: 2px;font-weight: bold;">
+				Identification : {{ form_widget(form.identification) }}
+			</div>
+			
+			{% include "LmiEventBundle:Form:Briques/periode.html.twig" %}
+			{% include "LmiEventBundle:Form:Briques/ambiances.html.twig" %}
+			{% include "LmiEventBundle:Form:Briques/types.html.twig" %}
+			{% include "LmiEventBundle:Form:Briques/regions.html.twig" %}
+			
+			<div class="clean"/>
+			
+			{{ form_rest(form) }}
+			
+			<input type="submit" />
+			<input type="button" value="Fermer" />
+		</form>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+{% set tabDates = tabDates|default(null) %}
+
+{% if tabDates is not null %}
+	<ul class="nav nav-tabs nav-justified tabs">
+		{% for date in tabDates %}
+			<li {% if date.date == tabToActive %} class="active" {% endif %}>
+				{% if date.date == today %}
+					<a href="{{ path('lmievent_accueil', {'date': date.date} ) }}">{{ 'day.today' | trans }}</a>
+				{% elseif date.date == tomorrow %}
+					<a href="{{ path('lmievent_accueil', {'date': date.date} ) }}">{{ 'day.tomorrow' | trans }}</a>
+				{% else %}
+					<a href="{{ path('lmievent_accueil', {'date': date.date} ) }}">{{ date.date }}</a>
+				{% endif %}
+			</li>
+		{% else %}
+			<p>Aucun évènement trouvé</p>
+		{% endfor %}
+	</ul>
+{% endif %}
+	

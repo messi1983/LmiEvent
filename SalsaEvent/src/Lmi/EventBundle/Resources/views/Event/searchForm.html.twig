@@ -1,0 +1,8 @@
+{# {% set redirectUrl = redirectUrl|default(null) %}#}
+{# {% set page = page|default(null) %}#}
+
+<div class="form">
+	<form method="post" {{ form_enctype(searchForm) }}>
+		{{ form_widget(searchForm) }}
+	</form>
+</div>

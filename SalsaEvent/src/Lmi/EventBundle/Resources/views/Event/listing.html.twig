@@ -1,0 +1,62 @@
+{% extends "LmiEventBundle::layout.html.twig" %}
+
+{% set subtab = subtab|default(0) %}
+ 
+{% block lmievent_body %}
+	<div id="dialog-message" class="dialog-message">
+		<span class="button b-close"><span>X</span></span>
+		<span class="logo">bPopup</span>
+		<div class="content important">{{ 'selection.list.empty.error'|trans }}</div>
+		<div><span class="button dialogOK">{{ 'button.OK'|trans }}</span></div>
+	</div>
+	
+	<div id="listing" {% if is_granted('ROLE_ADMIN') %} class="well" {% endif %}>
+		{% if is_granted('ROLE_ADMIN') %}
+			<ul class="nav nav-tabs nav-justified">
+				{% if 0 == subtab %}
+					<li class="active"><a href="{{ path(listingUrl, {'subtab': 0}) }}" style="color:orange">Non publies</a></li>
+					<li><a href="{{ path(listingUrl, {'subtab': 1, 'unPub': page, 'page': pub}) }}" style="color:orange">Publies</a></li>
+				{% else %}
+					<li><a href="{{ path(listingUrl, {'subtab': 0, 'pub': page, 'page': unPub}) }}" style="color:orange">Non publies</a></li>
+					<li class="active"><a href="{{ path(listingUrl, {'subtab' : 1}) }}" style="color:orange">Publies</a></li>
+				{% endif %}
+			</ul>
+		{% endif %}
+		
+		<div class="indent">
+			{% if is_granted('ROLE_ADMIN') %}
+			<form method="post">
+			{% endif %}
+			
+			{% for bean in listEntities %}
+				{% include "LmiEventBundle:Event:listing_row_panel.html.twig" %}
+			{% else %}
+				<p>{{ emptyMessage }}</p>
+			{% endfor %}
+				
+			{% if is_granted('ROLE_ADMIN') %}
+				<!-- admin buttons panel -->
+				{% if 1 == subtab %}
+					{% include "LmiEventBundle:Event:admin_buttons_panel.html.twig" with {'secondButton': 'unpublish'} %}
+				{% else %}
+					{% include "LmiEventBundle:Event:admin_buttons_panel.html.twig" with {'secondButton': 'publish', 'rowView': rowView} %}
+				{% endif %}
+			</form>
+			{% endif %}
+		</div>
+	  
+		<div class="pagination">
+			<ul>
+				{% for p in range(1, nombrePage) %}
+					<li{% if p == page %} class="active"{% endif %}>
+						{% if is_granted('ROLE_ADMIN') %}
+							<a href="{{ path(listingUrl, {'page': p, 'subtab' : subtab, unPub : unPub, pub : pub}) }}">{{ p }}</a>
+						{% else %}
+							<a href="{{ path(listingUrl, {'page': p}) }}">{{ p }}</a>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}

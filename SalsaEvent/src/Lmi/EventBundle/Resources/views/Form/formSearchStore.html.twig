@@ -1,0 +1,53 @@
+<div class="formulaire">
+	<div id="popup">
+		 <span class="button b-close"><span>X</span></span>
+		 <div class="content"></div>
+	</div>
+	
+	<h3>Formulaire de recherche des points de vente</h3>
+	<div class="well">
+		<form action="{{ path('lmievent_rechercher_commerces') }}" method="post" {{ form_enctype(form) }}>
+			<div class="error">
+				{{ form_errors(form) }}
+			</div>
+			
+			<div class="equipements" style="margin-bottom: 50px">
+				<p style="margin-top:7px;font-weight: bold;">Equipements :</p>
+				<div style="margin-left: 30px;">
+					{{ form_errors(form.equipements) }}
+					
+					<div style="margin-left: 15px;">
+					{% for equipement in form.equipements %}
+						{{ form_widget(equipement) }}
+						{% if loop.index is divisibleby(3) %}
+					        <br class="clean" />
+					    {% endif %}
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+			
+			<div class="clean"/>
+			
+			<div class="domaines" style="margin-bottom: 30px">
+				<p style="margin-top:7px;font-weight: bold;">Domaine(s) :</p>
+				<div style="margin-left: 30px;">
+					{{ form_errors(form.domaines) }}
+					
+					<div style="margin-left: 15px;">
+					{% for domaine in form.domaines %}
+						{{ form_widget(domaine) }}
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+			
+			<div class="clean"/>
+			
+			{{ form_rest(form) }}
+			
+			<input type="submit" />
+			<input type="button" value="Fermer" />
+		</form>
+	</div>
+</div>

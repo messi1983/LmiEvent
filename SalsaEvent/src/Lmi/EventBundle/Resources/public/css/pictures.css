@@ -1,0 +1,64 @@
+/* Classes obligatoires pour les flèches */
+.flecheDesc {
+  width: 0; 
+  height: 0; 
+  float:right;
+  margin: 10px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+.flecheAsc {
+  width: 0; 
+  height: 0;
+  float:right;
+  margin: 10px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+/* Classes obligatoires pour le bouton "+" (bouton d'affichage du détail) */
+.plus,
+.moins,
+.plus-rouge,
+.moins-rouge {
+  width: 25px;
+  height: 25px;
+  /* border-radius: 50%; */
+  /* border: 5px solid #B4B4B4; */
+}
+
+.plus:before,
+.moins:before,
+.plus-rouge:before,
+.moins-rouge:before {
+  content: '';  
+  width: 19px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 3px;
+}
+
+.plus:before,
+.moins:before { border-top: 5px solid #B4B4B4; }
+
+.plus-rouge:before,
+.moins-rouge:before { border-top: 5px solid red; }
+
+.plus:after,
+.plus-rouge:after {
+  content: '';  
+  width: 1px;
+  height: 19px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  margin-left: 9px;
+}
+
+.plus:after { border-right: 5px solid #B4B4B4; }
+.plus-rouge:after { border-right: 5px solid red; }

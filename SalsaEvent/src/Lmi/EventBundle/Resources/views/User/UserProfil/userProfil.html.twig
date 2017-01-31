@@ -1,0 +1,37 @@
+<!-- ------------------------- --------->
+<!-- --- zone infos utilisateur -- -------->
+<!-- ------------------------- --------->
+<div id="userProfil" style="width: 100%; border: 1px solid green; padding: 5px; background-image: url({{ asset('bundles/lmievent/images/paysage.jpg') }})">
+	
+	<h3 style="color: white"><u>Vos Informations personnelles</u></h3>
+	
+	<div class="dash_bloc" style="background-color: white;">
+		<!-- ------------------------- -->
+		<!-- --- Profil Form   ------- -->
+		<!-- ------------------------- -->
+		{% include "LmiEventBundle:User:bloc_deroulant.html.twig" with {'form': formProfil, 'bloc': 'profil', 'titre': ' Profil'} %}
+		
+		<!-- ------------------------- -->
+		<!-- --- Coordonnées banque -- -->
+		<!-- ------------------------- -->
+		{% include "LmiEventBundle:User:bloc_deroulant.html.twig" with {'form': formBankAccount, 'bloc': 'coordB', 'titre': 'Coordonnées bancaires'} %}
+		
+		<!-- ------------------------- -->
+		<!-- --- Infos véhicule -- -->
+		<!-- ------------------------- -->
+		{% include "LmiEventBundle:User:bloc_deroulant.html.twig" with {'form': formCarInfos, 'bloc': 'carInfos', 'titre': 'Véhicule'} %}
+		
+		<!-- ------------------------- -->
+		<!-- --- user friends       -- -->
+		<!-- ------------------------- -->
+		{% include "LmiEventBundle:User:UserProfil\\dash_grp_amis.html.twig" %}
+	</div>
+	
+	<br>
+	
+	<div class="dash_bloc">
+		<div class="contenu">
+			<p class="title"><b>Informations complémentaires</b></p>
+		</div>
+	</div>
+</div>

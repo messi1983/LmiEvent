@@ -1,0 +1,53 @@
+<!-- --------------------------------------------------------------------- -->
+<!--  --------------------------- Covoiturages ------------------------------>
+<!-- --------------------------------------------------------------------- -->
+<div id="userCarpooling" style="width: 100%; border: 1px solid green; padding: 5px; display: none; background-image: url({{ asset('bundles/lmievent/images/paysage.jpg') }})">
+	
+	<h3 style="color: white"><u>Vos Covoiturages</u></h3>
+	
+	<div class="dash_bloc">
+		<div class="contenu">
+			<!-- ------------------------- -->
+			<!-- --- Covoiturages emis -- -->
+			<!-- ------------------------- -->
+			{% include "LmiEventBundle:User:CarPooling\\tab_cov_generique.html.twig"  with {'type': 'emis', 'titre': 'Vos annonces (12)'} %}
+			
+			<!-- ------------------------- -->
+			<!-- --- Covoiturages reçus -- -->
+			<!-- ------------------------- -->
+			{% include "LmiEventBundle:User:CarPooling\\tab_cov_generique.html.twig"  with {'type': 'recus', 'titre': 'Propositions reçues (12)'} %}
+			
+			<!-- ------------------------- ----------------->
+			<!-- --- Covoiturages en attente de retour -- -->
+			<!-- ------------------------- ----------------->
+			{% include "LmiEventBundle:User:CarPooling\\tab_cov_generique.html.twig"  with {'type': 'pending', 'titre': 'En attente de réponse (12)'} %}
+			
+			<!-- ------------------------- ---->
+			<!-- --- Covoiturages à venir -- -->
+			<!-- ------------------------- ---->
+			{% include "LmiEventBundle:User:CarPooling\\tab_cov_generique.html.twig"  with {'type': 'validate', 'titre': 'Trajets à venir (12)'} %}
+			
+			<!-- ------------------------- ---->
+			<!-- --- Covoiturages en historique -- -->
+			<!-- ------------------------- ---->
+			{% include "LmiEventBundle:User:CarPooling\\tab_cov_generique.html.twig"  with {'type': 'history', 'titre': 'Historique des voyages (12)'} %}
+			
+			<!-- ------------------------- -->
+			<!-- --- Notifications ------- -->
+			<!-- ------------------------- -->
+			<div class="notification">
+				<div class="barrette">
+					<div class="texte">Gerer vos alertes</div>
+					<div class="notif detail plus"></div>
+				</div>
+				
+				<div id="notif_cov_panel" class="detail_box" style="display: none; border: 1px solid green; padding: 10px">
+					<ul>
+						<li>Newsletter</li>
+						<li>Alertes SMS</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

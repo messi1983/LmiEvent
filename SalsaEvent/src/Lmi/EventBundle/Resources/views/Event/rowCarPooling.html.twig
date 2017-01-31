@@ -1,0 +1,49 @@
+{% set carPooling = element|default(null) %}
+
+<div class="cov ligne">
+	<!-- Flyer -->
+	<div class="colCov0 flyer">
+		<p style="float: left"><img src="{{ asset('bundles/lmievent/images/logo_ecole.jpg' | imagine_filter('thumb_75x75')) }}" alt="messi" /></p>
+		
+		<div class="conducteur">
+			<p><b>L. Messi</b></p>
+			<p>33 ans</p>
+			<p class="metier">Ingénieur</p>
+		</div>
+		<p class="clean"></p>
+	</div>
+	
+	<!-- Resume -->
+	<div class="colCov1 resume">
+		
+		<!-- Price -->
+		<p  class="cov-price">15 &euro;</p>
+		
+		<!-- car pooling title -->
+		<div>
+			<p class="event-hour">{{ carPooling.dateDepart|date('H\\hi') }}</p>
+			<p class="trajet"><a href="#">{{ carPooling.trajet.villeDepart }} > {{ carPooling.trajet.villeArrivee }}</a></p>
+			<p class="clean" />
+		</div>
+		
+		<div class="">
+			<div class="rdv">
+				<p><span class="cov-depart">Départ  :</span> Gare Saint jean, Bordeaux</p>
+				<p><span class="cov-arrivee">Arrivée :</span> Gare Matabiau, Toulouse</p>
+			</div>
+			<div class="infos">
+				<p><span class="vehicule">Véhicule : </span><span style="font-weight: bold">Renault Mégane</span></p>
+				<p><span class="places">Places restantes :</span> <span class="important">2 /</span><b> 4</b></p>
+			</div>
+		</div>
+		
+		<p class="clean"></p>
+		
+		<div classe="service" style="font-size: 80%;padding-left:10px;background-color: yellow">
+			<p>Covoiturage pour l'événement : <b>{{ carPooling.event.identification }}</b></p>
+		</div>
+		<p class="clean"></p>
+	</div>
+	
+	<div class="clean"></div>
+</div>

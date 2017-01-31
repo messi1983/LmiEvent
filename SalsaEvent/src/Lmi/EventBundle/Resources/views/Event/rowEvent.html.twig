@@ -1,0 +1,110 @@
+{% set event = element|default(null) %}
+{% set soiree = event|soiree(event, tabToActive) %}
+{% set pSoiree = event|periode(event, 'soiree') %}
+{% set pStage = event|periode(event, 'stage') %}
+
+<div class="soiree ligne">
+	<!-- ----- -->
+	<!-- Flyer -->
+	<!-- ----- -->
+	<div class="colEvent0 flyer">
+		<p><img src="{{ asset('bundles/lmievent/images/logo_ecole.jpg' | imagine_filter('thumb_100x100')) }}" alt="messi" /></p>
+		
+		<p class="organizer">
+			{% if event.organisateurs is not empty %}
+				{{ event.mainOrganizer }}
+			{% endif %}
+		</p>
+	</div>
+	<!-- ----- ------>
+	<!-- Fin Flyer -->
+	<!-- ----- ------>
+	
+	<!-- ---- ---->
+	<!-- Resume -->
+	<!-- ---- ---->
+	<div class="colEvent1 resume">
+		<div class="contenu">
+			<!-- Event title -->
+			<div>
+				<p class="event-hour">{{ pSoiree.dateDebut|date('H\\hi') }}</p>
+				<p class="identification">{{ event.identification }}</p>
+				<p class="clean" />
+			</div>
+			
+			<!-- Short description -->
+			<p class="short-desc">
+				{% if event.soirees is not empty %}
+					{% if event.stages is empty %}
+						Soiree <span class="important">{{ event.ambiances|join('/') }}</span> de <span class="important">{{ pSoiree.dateDebut|date('H\\hi') }} à {{ pSoiree.dateFin|date('H\\hi') }}</span> avec <b>Dj XXX</b> aux platines
+					{% else %}
+						Soirée <span class="important">{{ event.ambiances|join('/') }}</span> + <span class="important">{{ event.stages|length }} stages</span> (Kiz, Salsa ...).
+					{% endif %}
+				{% endif %}
+			</p>
+			<!-- End Short description -->
+			
+			<!-- Localisation -->
+			<p class="localisation">Salle "Le Temple" - <span class="important" style="background-color: #FBF2EF">{#{ soiree.adresse.ville }#}Bordeaux / Aquitaine / France</span></p>
+			<p class="clean"></p>
+			
+			<!-- Services (car poolings, accommodations, stages) -->
+			<div class="services">
+				
+				<!--  table for car poolings and accommodations-->
+				<table>
+					<tr><!-- car poolings line -->
+						<td><b>covoiturages:</b></td>
+						<td><span class="important">{{ event.availableCarpoolings|length }}</span> proposé(s)</td>
+						<td><a href="#">Proposez</a></td>
+						<td>
+							{% if event.carpoolings is not empty %}
+								<a href="{{ path('lmievent_rechercher_covoiturages', {'eventId': event.id} ) }}">Consultez</a>
+							{% endif %}
+						</td>
+					</tr>
+					<tr><!-- accommodations line -->
+						<td><b>Hébergements:</b></td>
+						<td><span class="important">{{ event.hebergements|length }}</span> proposé(s)</td>
+						<td><a href="#">Proposez</a></td>
+						<td>
+							{% if event.hebergements is not empty %}
+								<a href="{{ path('lmievent_rechercher_hebergements', {'eventId': event.id} ) }}">Consultez</a>
+							{% endif %}
+						</td>
+					</tr>
+				</table>
+				<!-- End table for car poolings and accommodations-->
+				
+				<!--  stages block -->
+				<div class="stages">
+					<label>Stages:</label>
+					<p>
+					{% for stage in event.stages %}
+						{% if loop.index is divisibleby(2) %}
+							<a href=""><span style="color: black">{{ stage.danse }}</span></a>
+						{% else %}
+							<a href="">{{ stage.danse }}</a>
+						{% endif %}
+					{% endfor %}
+					</p>
+				</div>
+				<!-- End stages block -->
+			</div>
+			<!-- End Services (car poolings, accommodations, stages) -->
+		</div>
+		
+		<div class="programme">
+			<p style="font-weight: bold;color: blue"><u>Programe :</u></p>
+			<p style="font-size:85%"><span style="font-weight: bold">{{ pStage.dateDebut|date('H\\hi') }} - {{ pStage.dateFin|date('H\\hi') }}:</span> Stages</p>
+			<p style="font-size:85%"><span style="font-weight: bold">{{ pSoiree.dateDebut|date('H\\hi') }} - {{ pSoiree.dateFin|date('H\\hi') }}:</span> Soirée</p>
+		</div>
+		
+{# 		<p class="clean"></p>#}
+	</div>
+	<!-- ---- -------->
+	<!-- Fin Resume -->
+	<!-- ---- -------->
+	
+	<div class="clean"></div>
+</div>

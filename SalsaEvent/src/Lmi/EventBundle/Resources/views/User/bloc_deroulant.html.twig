@@ -1,0 +1,25 @@
+{% set bloc = bloc|default(null)%}
+{% set form = form|default(null) %}
+{% set titre = titre|default(null) %}
+
+<!-- ------------------------- -->
+<!-- --- Infos véhicule -- -->
+<!-- ------------------------- -->
+<div class="{{ bloc }}" style="padding: 5px">
+	<div class="barrette">
+		<div class="texte">{% if bloc == 'profil' %}<i class="icon-user"></i> {% endif %} {{ titre }}</div>
+		<div class="{{ bloc ~ ' detail plus' }}"></div>
+	</div>
+	
+	<div id="{{ bloc ~ '_panel'}}" class="detail_box" style="display: none; border: 1px solid green; padding: 10px">
+		<form method="post" {{ form_enctype(form) }}>
+			{{ form_widget(form) }}
+			<div>
+				<input type="submit" id="btn-submit" class="btn btn-primary" />
+				<input type="reset" value="{{ 'button.cancel'|trans }}" id="btn-reset" class="btn btn-default" />
+				<div class="clean"></div>
+			</div>
+		</form>
+	</div>
+</div>
+

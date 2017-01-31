@@ -1,0 +1,51 @@
+{% extends "::layout.html.twig" %}
+
+{% set listeElements = listeElements|default(null) %}
+{% set eventsDates = eventsDates|default(null) %}
+{% set type = type|default(null) %}
+
+{% block title %}
+	{{ parent() }} : {{ title }}
+{% endblock %}
+
+{% block body %}
+ 	{% if type == 'event' %}
+		{% include 'LmiEventBundle:Event:page-event-tabs.html.twig' with {'periodes': eventsDates} %}
+	{% elseif type == 'carpooling' or type == 'accommodation' %}
+		{% include 'LmiEventBundle:Event:page-cp-acc-tabs.html.twig' with {'periodes': eventsDates} %}
+	{% endif %}
+		
+	<div class="rest">
+		<p class="indent result-search">
+			Nous avons trouvés <span class="important">{{ listeElements|length }}</span>
+			{% if type == 'event' %}
+				evenement(s)
+			{% elseif type == 'carpooling' %}
+				covoiturage(s)
+			{% elseif type == 'danceschool' %}
+				écoles
+			{% endif %}
+		</p>
+		
+		{% if type == 'danceschool' %}
+			{% include 'LmiEventBundle:Event:page-schools-header.html.twig' %}
+		{% endif %}
+
+		{% if listeElements is not null%}
+			{% for element in listeElements %}
+				{% include targetView with {'element': element} %}
+				<div class="clean"></div>
+			{% endfor %}
+			
+			<div class="pagination">
+				<ul>
+				{% for p in range(1, nombrePage) %}
+					<li{% if p == page %} class="active"{% endif %}>
+						<a href="{{ path('lmievent_rechercher_evenements', {'page': p}) }}">{{ p }}</a>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

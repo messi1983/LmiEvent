@@ -1,0 +1,55 @@
+{% set detail = detail|default(false) %}
+{% set listing = listing|default(false) %}
+{% set cv = cv|default(false) %}
+{% set comment = bean|default(null) %}
+{% set isNewEntity = isNewEntity|default(false) %}
+
+{% if comment %}
+	{% if listing %}
+		<div class="col-avatar-avis">
+			<img src="{{ asset('bundles/sdzblog/images/avatar.jpg') }}" alt="avatar" />
+		</div>
+		
+		{% if is_granted('ROLE_ADMIN') %}
+		<div class="col-auteur-avis-1">
+		{% else %}
+		<div class="col-auteur-avis-2">
+		{% endif %}
+			<p><span class="important">
+				<b>
+				{% if comment.auteur is not null %}
+					{{ comment.auteur.pseudo }},
+				{% else %}
+					{{ 'message.anonymous'|trans }},
+				{% endif %}
+				</b></span> <span class="listing-texte-size signale">{{ 'date.time.format1'|trans({'%date%': comment.date|date('d/m/Y'), '%time%': comment.date|date('H:i:s')}) }}</span>
+			</p>
+			<p class="listing-texte-size">{{ comment.contenu }}</p>
+		</div>
+		{% if is_granted('ROLE_ADMIN') %}
+			<div class="col-check-all"><input type="checkbox" name="myIds[]" value="{{ comment.id }}"/></div>
+		{% endif %}
+	{% else %}
+		{% if is_granted('ROLE_ADMIN') %}
+			<h2 class="header important">
+				{% if comment.auteur is not null %}
+					{{ 'comment.author'|trans({'%pseudo%': comment.auteur.pseudo }) }}
+				{% else %}
+					{{ 'comment.anonymous'|trans }}
+				{% endif %}
+			</h2><br />
+			<p class="indent important">{{ 'date.time.format0'|trans({'%date%': comment.date|date('d/m/Y'), '%time%': comment.date|date('H:i:s')}) }}</p>
+		{% endif %}
+		<div class="indent">
+			<div class="comment">
+				<p class="notice">{{ 'comment.summary.label'|trans }}</p>
+				<p class="well">{{ comment.contenu }}</p>
+			</div>
+		</div>
+	{% endif %}
+{% else %}
+	<div class="sent-comment-ok">
+		<p class="success">{{ 'comment.sent.ok'|trans }}</p>
+		<p class="value">{{ 'comment.info'|trans }}</p>
+	</div>
+{% endif %}

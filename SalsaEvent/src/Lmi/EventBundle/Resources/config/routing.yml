@@ -1,0 +1,45 @@
+lmievent_accueil:
+    path:      /
+    defaults:  { _controller: LmiEventBundle:Event:index, page: 1 }
+    requirements:
+        page:  \d*
+
+lmievent_admin_listing:
+    path:      /admin/listing/{page}
+    defaults:  { _controller: LmiEventBundle:Event:listing, page: 1 }
+    requirements:
+        page:  \d*
+
+lmievent_envoiMail:
+    path:      /envoiMail
+    defaults:  { _controller: LmiEventBundle:Event:envoiMail }
+
+lmievent_voir_slug:
+    path:     /{annee}/{slug}.{_format}
+    defaults: { _controller: LmiEventBundle:Event:voirSlug, _format: html }	
+    requirements:
+        annee:  \d{4}
+
+##########################---USER---##########################################################
+lmievent_user_dashbord:
+    pattern:  /dashboard
+    defaults: { _controller: LmiUserBundle:User:dashboard }
+
+lmievent_user_inscription:
+    pattern:  /inscription
+    defaults: { _controller: LmiUserBundle:User:inscription }
+
+lmievent_user_auth:
+    pattern:  /auth
+    defaults: { _controller: LmiUserBundle:User:authentification }
+
+lmievent_user_grp_new:
+    pattern:  /groupe/creer
+    defaults: { _controller: LmiEventBundle:Groupe:creer }
+
+##########################---EVENEMENT---##########################################################
+lmievent_lister_evenements:
+    path:      /lister/{page}
+    defaults:  { _controller: LmiEventBundle:Event:lister, page: 1 }
+    requirements:
+        page:  \d*

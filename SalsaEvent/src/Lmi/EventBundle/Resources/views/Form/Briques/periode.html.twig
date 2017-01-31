@@ -1,0 +1,21 @@
+<div class="brique">
+	<fieldset>
+		<legend>Periode</legend>
+		<table>
+			<tr>
+				<td style="font-style: italic;">Entre</td>
+				<td style="font-style: italic;">Et</td>
+			</tr>
+			<tr>
+				<td>
+					{{ form_errors(form.periode.dateDebut) }}
+					{{ form_widget(form.periode.dateDebut) }}
+				</td>
+				<td>
+					{{ form_errors(form.periode.dateFin) }}
+					{{ form_widget(form.periode.dateFin) }}
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+</div>

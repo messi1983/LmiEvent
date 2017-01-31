@@ -1,0 +1,43 @@
+{% extends "LmiEventBundle::layout.html.twig" %}
+
+{% set redirectUrl = redirectUrl|default(null) %}
+{% set page = page|default(null) %}
+ 
+{% block fos_user_subtitle %}
+	<center><h3>Pas encore membre ? Inscrivez-vous gratuitement </h3></center>
+{% endblock fos_user_subtitle %}
+	
+{% block fos_user_content %}
+<div class="well inscription">
+	<div>
+		<form action="{{ path('lmievent_user_inscription') }}" method="post" {{ form_enctype(form) }}>
+			<div class="error">
+				{{ form_errors(form) }}
+			</div>
+			
+			<div class="sexe">
+				{{ form_widget(form.sexe) }}
+			</div>
+			<div class="fake-input">
+	    		{{ form_widget(form.lastname) }}
+	    		<img src="{{ asset('bundles/lmievent/images/auteur_logo.jpg' | imagine_filter('thumb_15x15')) }}" alt="locale_fr.jpg" class="image-locale"/>
+	    	</div>
+	    	<div class="fake-input">
+	    		{{ form_widget(form.firstname) }}
+	    		<img src="{{ asset('bundles/lmievent/images/auteur_logo.jpg' | imagine_filter('thumb_15x15')) }}" alt="locale_fr.jpg" class="image-locale"/>
+	    	</div>
+	    	<div class="fake-input">
+	    		{{ form_widget(form.email) }}
+	    		<img src="{{ asset('bundles/lmievent/images/auteur_logo.jpg' | imagine_filter('thumb_15x15')) }}" alt="locale_fr.jpg" class="image-locale"/>
+	    	</div>
+	    	<div class="fake-input">
+	    		{{ form_widget(form.password) }}
+	    		<img src="{{ asset('bundles/lmievent/images/auteur_logo.jpg' | imagine_filter('thumb_15x15')) }}" alt="locale_fr.jpg" class="image-locale"/>
+	    	</div>
+			
+			<input type="submit" />
+			<input type="button" value="Fermer" />
+		</form>
+	</div>
+</div>
+{% endblock %}

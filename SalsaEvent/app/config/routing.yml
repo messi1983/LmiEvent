@@ -1,0 +1,18 @@
+lmi_user:
+    resource: "@LmiUserBundle/Resources/config/routing.yml"
+
+lmi_event:
+    resource: "@LmiEventBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/event
+    requirements:
+        _locale: en|fr
+
+root:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: lmievent_accueil
+        permanent: true
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

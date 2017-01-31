@@ -1,0 +1,13 @@
+<div class="brique">
+	<fieldset>
+		<legend>Ambiances</legend>
+		<div>
+			{% for ambiance in form.ambiances %}
+				{{ form_widget(ambiance) }}
+				{% if loop.index is divisibleby(1) %}
+			        <br class="clean" />
+			    {% endif %}
+			{% endfor %}
+		</div>
+	</fieldset>
+</div>
