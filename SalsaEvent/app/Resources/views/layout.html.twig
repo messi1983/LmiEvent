@@ -13,8 +13,7 @@
 		<link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}" type="text/css" />
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css" />
-		<link rel="stylesheet" href="{{ asset('css/jquery-ui-1.10.3.custom.css') }}" type="text/css" />
-		<link rel="stylesheet" href="{{ asset('css/jquery-ui-1.10.3.custom.min.css') }}" type="text/css" />
+		<link rel="stylesheet" href="{{ asset('components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}"  type="text/css" />
 		<link rel="stylesheet" href="{{ asset('bundles/lmievent/css/lmiuser.css') }}" type="text/css" />
 		<link rel="stylesheet" href="{{ asset('bundles/lmievent/css/identification.css') }}" type="text/css" />
 		<link rel="stylesheet" href="{{ asset('bundles/lmievent/css/form.css') }}" type="text/css" />
@@ -26,34 +25,30 @@
   </head>
  
   <body>
+  
 	<div class="conteneur">
+	
       <div id="header">
-	  	<div class="row" style="border: 1px solid black;margin: 0px;">
-	         <ul id="user-actions">
-	         	<li><a id="inscription" href="{{ path('lmievent_user_inscription') }}">Inscription</a></li>
-	      		<li>
-					<a id="identification" href="#">Identification</a>
-	      			<ul>
-		      			<li>
-		      				<div class="form">
-		      					{{ render(controller("LmiEventBundle:User:authentification", {})) }}
-		      				</div>
-		      			</li>
-		      		</ul>
-	      		</li>
-		     </ul>
+      
+	  	<div class="row" style="border: 1px solid black;margin: 0px; padding-top: 5px">
+			
+    		{% include "::liens_header.html.twig" %}
+    		
+    		{% include "::header_carpooling_quick_form.html.twig" %}
+		     
      	</div>
+     	
       </div>
       
       <div class="row">
       	<!-- ------------ --------->
       	<!-- Formulaires - debut -->
       	<!-- ------------ --------->
-      	<div id="accueil_panel" style="border: 1px solid red;margin-left: 20px;display: none">
-      		<ul id="formRechEcole">
-				{{ render(controller("LmiEventBundle:CarPooling:formulaire", {})) }}
-      		</ul>
-      	</div>
+{#       	<div id="accueil_panel" style="border: 1px solid red;margin-left: 20px;display: none">#}
+{#       		<ul id="formRechEcole">#}
+{# 				{{ render(controller("LmiCarPoolingBundle:CarPooling:formulaire", {})) }}#}
+{#       		</ul>#}
+{#       	</div>#}
       	<!-- ------------ ------->
       	<!-- Formulaires - Fin -->
       	<!-- ------------ ------->
@@ -65,31 +60,11 @@
       	<!-- Liens principaux -->
         <div id="menu" class="span3">
 			<div class="well">
-				<div>
-					<table>
-						<tr>
-							<td><a href="{{ path('lmievent_accueil') }}">Evenements</a></td>
-							<td><a href="#"><img class="rech-style-image" src="{{ asset('bundles/lmievent/images/search.png' | imagine_filter('thumb_20x20')) }}" alt="recherche" /></a></td>
-						</tr>
-						<tr>
-							<td><a href="{{ path('lmievent_rechercher_ecoles') }}">Ecoles</a></td>
-							<td><a class="accueil_btn" href="#"><img class="rech-style-image" src="{{ asset('bundles/lmievent/images/search.png' | imagine_filter('thumb_20x20')) }}" alt="recherche" /></a></td>
-						</tr>
-						<tr>
-							<td><a href="{{ path('lmievent_rechercher_covoiturages') }}">Covoiturages</a></td>
-							<td><a class="accueil_btn" href="#"><img class="rech-style-image" src="{{ asset('bundles/lmievent/images/search.png' | imagine_filter('thumb_20x20')) }}" alt="recherche" /></a></td>
-						</tr>
-						<tr>
-							<td><a href="{{ path('lmievent_rechercher_hebergements') }}">Hebergements</a></td>
-							<td><a class="accueil_btn" href="#"><img class="rech-style-image" src="{{ asset('bundles/lmievent/images/search.png' | imagine_filter('thumb_20x20')) }}" alt="recherche" /></a></td>
-						</tr>
-						
-						<tr>
-							<td><a href="{{ path('lmievent_user_dashbord') }}">Tableau de bord</a></td>
-							<td style="text-align: right"><a class="accueil_btn" href="#"><img class="rech-style-image" src="{{ asset('bundles/lmievent/images/search.png' | imagine_filter('thumb_20x20')) }}" alt="recherche" /></a></td>
-						</tr>
-					</table>
-				</div>
+			
+				<!-- ------------ -------->
+      			<!-- liens - principaux -->
+      			<!-- ------------ -------->
+				{% include "::liens_menu.html.twig" %}
 				
 				<br />
 				
@@ -148,15 +123,12 @@
     </div>
  
     {% block javascripts %}
-		<script src="{{ asset('//code.jquery.com/jquery-1.8.2.min.js') }}"></script>
-		<script src="{{ asset('//ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js') }}"></script>
-		<script src="{{ asset('//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js') }}"></script>
-		<script src="{{ asset('//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js') }}"></script>
-		<script src="{{ asset('js/bootstrap.js') }}"></script>
-		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-		<script src="{{ asset('js/datepicker.js') }}"></script>
-		<script src="{{ asset('js/jquery-ui-1.10.3.custom.min.js') }}"></script>
-		<script src="{{ asset('bundles/lmievent/js/jquery-ui-i18n-it.js') }}"></script>
+	   	<script src="{{ asset('components/jquery/jquery.js') }}"></script>
+    	<script src="{{ asset('components/jquery/jquery.min.js') }}"></script>
+	   	<script src="{{ asset('components/bootstrap/js/bootstrap.js') }}"></script>
+	    <script src="{{ asset('components/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+        <script src="{{ asset('components/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fr.js') }}"></script>
 		<script src="{{ asset('bundles/lmievent/js/form.js') }}"></script>
 		<script src="{{ asset('bundles/lmievent/js/lmiuser.js') }}"></script>
 		<script src="{{ asset('bundles/lmievent/js/lmievent.js') }}"></script>

@@ -4,10 +4,16 @@
    margin-bottom: 15px;
 }
 
+.ligne {
+  border:1px solid black;
+  margin-top:10px;
+  padding:5px
+}
+
 /************************** CAR POOLING ************************/
 
 .cp-edit-form .aller-retour {
-	margin-bottom: 3px;
+	margin: 10px 0px 10px 0px;
 }
 
 .cp-edit-form .bloc-avec-titre .titre {
@@ -19,68 +25,144 @@
 	padding: 4px 15px 4px 15px;
 }
 
-.cov .price {
-  width: 50px;
+.ligne .cov .price {
+  width: 40px;
   font-size: 1.2em;
   color:green;
   padding: 0px 5px 0px 5px
 }
 
-.cov .time {
+.ligne .cov .time {
   background-color: orange; 
   padding: 1px 6px 1px 6px;
   widht: 50px;
 }
 
-.cov .trajet {
+.ligne .cov .trajet {
   font-size: 1.3em;
   margin-left: 45px; 
 }
 
-.cov .driver-infos span {
+.ligne .cov .driver-infos span {
 	padding-left: 5px;
 }
 
-.cov .more-infos {
+.ligne .cov .more-infos {
 	margin-top: 15px; 
 	margin-bottom: 10px;
 }
 
-.cov .car-infos {
+.ligne .cov .car-infos {
 	margin-left: 40px;
 }
 
-.cov .resume {
+.ligne .cov .resume {
 	width: 620px;
 }
 
-.cov .driver-infos { 
+.ligne .cov .driver-infos { 
 	width: 185px;
 }
 
-.cov .depart { 
+.ligne .cov .depart { 
 	color:green; 
 	font-weight: bold; }
 	
-.cov .arrivee { 
+.ligne .cov .arrivee { 
 	color:orange; 
 	font-weight: bold; 
 }
 
-.cov .vehicule {
-  color:green;
-  font-weight: bold
+.ligne .cov .vehicule {
+	color:green;
+  	font-weight: bold
 }
 
-.cov .places {
-  color:orange;
-  font-weight: bold
+.ligne .cov .places {
+  	color:orange;
+  	font-weight: bold
+}
+
+.consultation .cov .resume {
+	width: 595px;
+	padding: 5px;
+}
+
+.consultation .cov .route {
+	width: 100%; 
+	padding: 5px; 
+	font-size: small;
+}
+
+.consultation .cov .route li span {
+	font-style: italic;
+}
+
+.consultation .carinfos .p,
+.consultation .carinfos li span {
+	color: navy;
+}
+
+.consultation .cov .precisions { 
+	width: 240px;
+	padding: 5px;
+}
+
+.consultation .cov .driver-infos {
+	font-size: small; 
+	font-weight: bold;
+}
+
+.consultation .cov img {
+	margin: 5px 4px 4px 0px;
+}
+
+.consultation .reservation button {
+	width: 100%;
+}
+
+.consultation .questionsReponses .contenu {
+	padding-left: 4px; 
+	font-size: small;
+}
+
+.consultation .questionsReponses .panel {
+	height: 220px; 
+	overflow:auto;
+}
+
+.consultation .questionReponse {
+	width: 550px; 
+	margin: 4px; 
+	padding: 0px 5px 0px 5px
+}
+
+.consultation .comment {
+	width: 580px; 
+	margin: 4px 4px 10px 4px; 
+	padding: 4px 4px 4px 5px;
+}
+
+.consultation .questionReponse hr {
+	margin: 0px;
 }
 
 /********************************************************************/
 
 /************************GENERAL*************************************/
 
+.lmi-nav-tabs {
+	margin-bottom: 0px;
+}
+
+.max-width {
+	width: 100%;
+}
+
+.contenu {
+	padding: 5px;
+	margin: 5px 0px 5px 0px;
+}
 .bloc-gauche {
 	float: left;
 }
@@ -91,6 +173,7 @@
 
 .bloc-avec-titre {
 	padding: 0px;
+	margin-bottom: 10px;
 }
 
 .bloc-avec-titre > .titre {
@@ -115,6 +198,10 @@
 	border: 1px solid green; 
 }
 
+.bordure-noire {
+	border: 1px solid black; 
+}
+
 .boutons-gestion {
 	margin-top: 20px;
 }
@@ -126,13 +213,29 @@
 }
 
 .smallFont {
-  font-size: 80%;
+  font-size: small;
 }
 
 .view > .title {
 	text-align:center; 
 	border-bottom: 1px solid black; 
 	font-style: italic;
+}
+
+.texte-vert {
+	color: green;
+}
+
+.texte-centre {
+	text-align: center;
+}
+
+.text-orange {
+	color: orange;
+}
+
+.text-navy {
+	color: navy;
 }
 
 .dashboard .title { background: orange; padding-left:5px; }

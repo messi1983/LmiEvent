@@ -1,3 +1,31 @@
+lmi_store:
+    resource: "@LmiStoreBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/commerces
+    requirements:
+        _locale: en|fr
+
+lmi_school:
+    resource: "@LmiSchoolBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/danceschool
+    requirements:
+        _locale: en|fr
+
+l_lmi_accommodation:
+    resource: "@LmiAccommodationBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/accommodation
+    requirements:
+        _locale: en|fr
+
+lmi_car_pooling:
+    resource: "@LmiCarPoolingBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/carpooling
+    requirements:
+        _locale: en|fr
+
+lmi_core:
+    resource: "@LmiCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 lmi_user:
     resource: "@LmiUserBundle/Resources/config/routing.yml"
 

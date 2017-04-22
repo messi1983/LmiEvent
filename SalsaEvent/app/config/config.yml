@@ -24,6 +24,8 @@ framework:
 
 # Twig Configuration
 twig:
+    globals:
+        fos_csrf_provider: "@form.csrf_provider"
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
     form:
@@ -85,7 +87,7 @@ stof_doctrine_extensions:
 fos_user:
     db_driver:     orm
     firewall_name: main
-    user_class:    Lmi\EventBundle\Entity\User
+    user_class:    Lmi\CoreBundle\Entity\User
 
 liip_imagine:
     filter_sets:

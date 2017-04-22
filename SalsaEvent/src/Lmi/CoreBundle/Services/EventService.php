@@ -1,13 +1,14 @@
 <?php
-namespace Lmi\EventBundle\Services;
+namespace Lmi\CoreBundle\Services;
 
 use Doctrine\ORM\EntityManager;
-use Lmi\EventBundle\Constants\ConstParamAttributs;
-use Lmi\EventBundle\Entity\Date;
+use Lmi\CoreBundle\Constants\ConstParamAttributs;
+use Lmi\CoreBundle\Entity\Date;
 use Doctrine\ORM\Query\ResultSetMapping;
-use Lmi\EventBundle\Outils\DateOutils;
-use Lmi\EventBundle\Twig\AppExtension;
-use Lmi\EventBundle\Constants\ConstClasses;
+use Lmi\CoreBundle\Outils\DateOutils;
+use Lmi\CoreBundle\Twig\AppExtension;
+use Lmi\CoreBundle\Constants\ConstClasses;
+use Lmi\CoreBundle\Services\AbstractService;
 
 /**
  * Event service class

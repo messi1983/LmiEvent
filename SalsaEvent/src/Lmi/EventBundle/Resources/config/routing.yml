@@ -29,10 +29,6 @@ lmievent_user_inscription:
     pattern:  /inscription
     defaults: { _controller: LmiUserBundle:User:inscription }
 
-lmievent_user_auth:
-    pattern:  /auth
-    defaults: { _controller: LmiUserBundle:User:authentification }
-
 lmievent_user_grp_new:
     pattern:  /groupe/creer
     defaults: { _controller: LmiEventBundle:Groupe:creer }

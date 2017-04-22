@@ -347,12 +347,6 @@ form ul li {
 .stage label { font-weight: bold; }
 .organizer { text-align: center; border:1px solid black; }
 
-.ligne {
-  border:1px solid black;
-  margin-top:10px;
-  padding:5px
-}
-
 .metier { font-style: italic; font-size: 95%; }
 
 .Kizomba { background-color: #87CEFA; }
