@@ -138,8 +138,8 @@
 .inscription .sexe     { margin-bottom: 8px }
 .inscription .fake-input { width:310px; }
 
-.identification { margin-left: 15px; }
-.identification {
+.identification { 
+  margin-left: 15px;
   float: left;
   color: red; 
   font-weight: bold;

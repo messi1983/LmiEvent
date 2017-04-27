@@ -10,143 +10,6 @@
   padding:5px
 }
 
-/************************** CAR POOLING ************************/
-
-.cp-edit-form .aller-retour {
-	margin: 10px 0px 10px 0px;
-}
-
-.cp-edit-form .bloc-avec-titre .titre {
-	font-style: italic; 
-	background-color: orange; 
-}
-
-.cp-edit-form .bloc-avec-titre .contenu {
-	padding: 4px 15px 4px 15px;
-}
-
-.ligne .cov .price {
-  width: 40px;
-  font-size: 1.2em;
-  color:green;
-  padding: 0px 5px 0px 5px
-}
-
-.ligne .cov .time {
-  background-color: orange; 
-  padding: 1px 6px 1px 6px;
-  widht: 50px;
-}
-
-.ligne .cov .trajet {
-  font-size: 1.3em;
-  margin-left: 45px; 
-}
-
-.ligne .cov .driver-infos span {
-	padding-left: 5px;
-}
-
-.ligne .cov .more-infos {
-	margin-top: 15px; 
-	margin-bottom: 10px;
-}
-
-.ligne .cov .car-infos {
-	margin-left: 40px;
-}
-
-.ligne .cov .resume {
-	width: 620px;
-}
-
-.ligne .cov .driver-infos { 
-	width: 185px;
-}
-
-.ligne .cov .depart { 
-	color:green; 
-	font-weight: bold; }
-	
-.ligne .cov .arrivee { 
-	color:orange; 
-	font-weight: bold; 
-}
-
-.ligne .cov .vehicule {
-	color:green;
-  	font-weight: bold
-}
-
-.ligne .cov .places {
-  	color:orange;
-  	font-weight: bold
-}
-
-.consultation .cov .resume {
-	width: 595px;
-	padding: 5px;
-}
-
-.consultation .cov .route {
-	width: 100%; 
-	padding: 5px; 
-	font-size: small;
-}
-
-.consultation .cov .route li span {
-	font-style: italic;
-}
-
-.consultation .carinfos .p,
-.consultation .carinfos li span {
-	color: navy;
-}
-
-.consultation .cov .precisions { 
-	width: 240px;
-	padding: 5px;
-}
-
-.consultation .cov .driver-infos {
-	font-size: small; 
-	font-weight: bold;
-}
-
-.consultation .cov img {
-	margin: 5px 4px 4px 0px;
-}
-
-.consultation .reservation button {
-	width: 100%;
-}
-
-.consultation .questionsReponses .contenu {
-	padding-left: 4px; 
-	font-size: small;
-}
-
-.consultation .questionsReponses .panel {
-	height: 220px; 
-	overflow:auto;
-}
-
-.consultation .questionReponse {
-	width: 550px; 
-	margin: 4px; 
-	padding: 0px 5px 0px 5px
-}
-
-.consultation .comment {
-	width: 580px; 
-	margin: 4px 4px 10px 4px; 
-	padding: 4px 4px 4px 5px;
-}
-
-.consultation .questionReponse hr {
-	margin: 0px;
-}
-
 /********************************************************************/
 
 /************************GENERAL*************************************/
@@ -289,3 +152,22 @@
 }
 
 .break-after { margin-bottom: 10px }
+
+.chevron::before {
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 0.45em;
+}
+
+.chevron.bottom:before {
+	top: 12px;
+	transform: rotate(135deg);
+}
